@@ -488,14 +488,19 @@ class CountryList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Select Country'),
-      ),
       body: ListView.builder(
         itemCount: _countries.length,
         itemBuilder: (context, index) {
           return ListTile(
-            title: Text(_countries[index].name),
+            title: Text(
+              _countries[index].name,
+              textAlign: TextAlign.start,
+              style: GoogleFonts.alata(
+                fontWeight: FontWeight.w100,
+                color: Ascolors,
+                fontSize: 20,
+              ),
+            ),
             onTap: () {
               Navigator.pop(context, _countries[index]);
             },
